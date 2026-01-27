@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>装修报价单分析报告</title>
+  <style>
+
+* {margin:0;padding:0;box-sizing:border-box;}
+body {font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f5f5;padding:20px;}
+.container {max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,0.1);padding:40px;}
+.header {border-bottom:3px solid #ff6d5a;padding-bottom:20px;margin-bottom:30px;}
+.header h1 {color:#2c3e50;font-size:32px;font-weight:bold;margin-bottom:15px;text-align:center;}
+.header-info {display:flex;flex-wrap:wrap;gap:20px 40px;color:#34495e;font-size:14px;margin-top:20px;}
+.header-info .info-item {flex:1;min-width:200px;}
+.score-card {text-align:center;padding:30px;border-radius:10px;margin-bottom:30px;}
+.score-card.high {background:linear-gradient(135deg,#ff6b6b 0%,#ee5a6f 100%);color:white;}
+.score-card.medium {background:linear-gradient(135deg,#ffa726 0%,#fb8c00 100%);color:white;}
+.score-card.low {background:linear-gradient(135deg,#66bb6a 0%,#43a047 100%);color:white;}
+.score-card h2 {font-size:20px;margin-bottom:15px;opacity:0.9;}
+.score {font-size:64px;font-weight:bold;margin:10px 0;}
+.risk-level {font-size:18px;text-transform:uppercase;letter-spacing:2px;margin-top:10px;}
+.summary-section {background:#f8f9fa;padding:25px;border-radius:8px;margin-bottom:30px;}
+.summary-section h2 {color:#2c3e50;font-size:22px;margin-bottom:15px;border-left:4px solid #ff6d5a;padding-left:10px;}
+.summary-section p {color:#555;line-height:1.8;font-size:15px;text-indent:2em;}
+.stats-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:30px;}
+.stat-card {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:25px;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.15);}
+.stat-card.high-severity {background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);}
+.stat-card h3 {font-size:16px;margin-bottom:15px;opacity:0.9;}
+.stat-number {font-size:48px;font-weight:bold;}
+.issues-section {margin-bottom:30px;overflow-x:auto;}
+.issues-section h2 {color:#2c3e50;font-size:22px;margin-bottom:20px;border-left:4px solid #ff6d5a;padding-left:10px;}
+.issues-table {width:100%;border-collapse:collapse;background:white;box-shadow:0 2px 4px rgba(0,0,0,0.05);}
+.issues-table thead {background:#34495e;color:white;}
+.issues-table th {padding:15px;text-align:left;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.5px;}
+.issues-table td {padding:15px;border-bottom:1px solid #ecf0f1;color:#555;font-size:14px;line-height:1.6;}
+.issues-table tbody tr:hover {background:#f8f9fa;}
+.severity-badge {display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold;text-transform:uppercase;}
+.severity-badge.high {background:#ff6b6b;color:white;}
+.severity-badge.medium {background:#ffa726;color:white;}
+.severity-badge.low {background:#66bb6a;color:white;}
+.footer {border-top:2px solid #ecf0f1;padding-top:20px;margin-top:30px;text-align:center;color:#95a5a6;font-size:13px;}
+.footer p {margin:5px 0;}
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>装修报价单分析报告</h1>
+      <div class="header-info">
+        <div class="info-item"><strong>工程信息:</strong> 工程地址：郑州市金水区 XX 小区 3 号楼 2 单元 501 室 工程工期：45 天</div>
+        <div class="info-item"><strong>报价信息:</strong> 报价单位：XX 装饰工程有限公司 报价日期：2025 年 12 月 3 日 联系人：王经理 电话：138XXXX1234</div>
+        <div class="info-item"><strong>分析时间:</strong> 2026-01-27T08:56:06Z</div>
+      </div>
+    </div>
+    <div class="score-card high">
+      <h2>整体评分</h2>
+      <div class="score">72</div>
+      <div class="risk-level">风险等级: HIGH</div>
+    </div>
+    <div class="summary-section">
+      <h2>总体评价</h2>
+      <p>该报价单结构基本清晰，但存在关键项目缺失（如防水）、材料规格不明确、工艺描述简略等问题，尤其在水电和墙面工程中存在较高风险。虽有部分价格看似优惠，但可能通过后期增项弥补。建议补充必要项目、细化材料与工艺说明，并增加质保条款。</p>
+    </div>
+    <div class="stats-container">
+      <div class="stat-card">
+        <h3>发现问题总数</h3>
+        <div class="stat-number">8</div>
+      </div>
+      <div class="stat-card high-severity">
+        <h3>高风险问题</h3>
+        <div class="stat-number">2</div>
+      </div>
+    </div>
+    <div class="issues-section">
+      <h2>问题详情</h2>
+      <table class="issues-table">
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>严重程度</th>
+            <th>描述</th>
+            <th>位置</th>
+            <th>建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>材料规格</td><td><span class="severity-badge high">HIGH</span></td><td>电线规格标注为“BV2.5/4 平方电线”，但未明确区分不同用途（如照明、插座、空调等）所对应的线径，易导致施工混乱或安全隐患。</td><td>水电改造 - 电线穿管</td><td>应分别列出不同用途对应的电线规格，例如照明用 BV2.5mm²，普通插座用 BV4mm²，空调或大功率电器用 BV6mm²，并注明品牌及是否符合国标。</td></tr><tr><td>项目完整性</td><td><span class="severity-badge high">HIGH</span></td><td>报价单中未包含防水工程（如卫生间、厨房等区域），而这些是装修中必不可少的隐蔽工程。</td><td>整体项目类别</td><td>补充防水处理项目，包括防水涂料品牌、涂刷遍数、闭水试验等详细说明。</td></tr><tr><td>项目完整性</td><td><span class="severity-badge medium">MEDIUM</span></td><td>未列明垃圾清运、成品保护、开荒保洁等常规配套服务，可能在后期产生增项费用。</td><td>其他费用</td><td>明确是否包含装修垃圾清运、入户门及电梯保护、完工后基础清洁等服务，若不含应单独列项。</td></tr><tr><td>工艺说明</td><td><span class="severity-badge medium">MEDIUM</span></td><td>墙面找平仅注明“耐水腻子，2 遍”，但未说明基层处理标准（如是否挂网、阴阳角处理方式等），影响施工质量。</td><td>墙面处理 - 墙面找平</td><td>补充施工工艺细节，如是否使用玻纤网防裂、阴阳角是否使用护角条、平整度误差控制标准等。</td></tr><tr><td>材料规格</td><td><span class="severity-badge medium">MEDIUM</span></td><td>乳胶漆仅标注“品牌乳胶漆”，未指明具体品牌、系列、环保等级（如是否达到十环认证或法国A+标准）。</td><td>墙面处理 - 墙面刷漆（底漆）</td><td>明确乳胶漆品牌、型号、环保认证及是否包含面漆（当前仅列底漆），避免以次充好。</td></tr><tr><td>隐藏费用</td><td><span class="severity-badge low">LOW</span></td><td>“水电改造管理费”和“工程管理费”内容模糊，未说明具体包含哪些服务内容，存在隐性收费风险。</td><td>水电改造管理费、其他费用 - 工程管理费</td><td>细化管理费构成，如是否包含现场协调、进度管控、材料验收等，避免重复收费或模糊计价。</td></tr><tr><td>合同条款</td><td><span class="severity-badge medium">MEDIUM</span></td><td>未提及质保期（如水电保修年限、墙面开裂保修等），不符合《住宅室内装饰装修管理办法》要求。</td><td>报价单末尾条款</td><td>补充质保条款，明确各分项工程保修年限（如水电隐蔽工程通常保修5年，表面工程2年）。</td></tr><tr><td>价格合理性</td><td><span class="severity-badge low">LOW</span></td><td>地砖铺设单价95元/㎡（含人工）略低于郑州市场平均水平（通常100-130元/㎡），需确认是否包含辅料（如水泥、沙子、瓷砖胶）及损耗。</td><td>地面铺装 - 地砖铺设</td><td>明确单价是否包含辅料、正常损耗（通常5%-8%）及特殊铺贴工艺（如拼花、对缝等）额外费用。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <p>报告生成时间: 2026-01-27 08:56:06</p>
+      <p>温馨提示：请结合本报告与装修公司核实细节，规避施工风险</p>
+    </div>
+  </div>
+</body>
+</html>
