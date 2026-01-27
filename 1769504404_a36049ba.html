@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>装修报价单分析报告</title>
+  <style>
+
+* {margin:0;padding:0;box-sizing:border-box;}
+body {font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f5f5;padding:20px;}
+.container {max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,0.1);padding:40px;}
+.header {border-bottom:3px solid #ff6d5a;padding-bottom:20px;margin-bottom:30px;}
+.header h1 {color:#2c3e50;font-size:32px;font-weight:bold;margin-bottom:15px;text-align:center;}
+.header-info {display:flex;flex-wrap:wrap;gap:20px 40px;color:#34495e;font-size:14px;margin-top:20px;}
+.header-info .info-item {flex:1;min-width:200px;}
+.score-card {text-align:center;padding:30px;border-radius:10px;margin-bottom:30px;}
+.score-card.high {background:linear-gradient(135deg,#ff6b6b 0%,#ee5a6f 100%);color:white;}
+.score-card.medium {background:linear-gradient(135deg,#ffa726 0%,#fb8c00 100%);color:white;}
+.score-card.low {background:linear-gradient(135deg,#66bb6a 0%,#43a047 100%);color:white;}
+.score-card h2 {font-size:20px;margin-bottom:15px;opacity:0.9;}
+.score {font-size:64px;font-weight:bold;margin:10px 0;}
+.risk-level {font-size:18px;text-transform:uppercase;letter-spacing:2px;margin-top:10px;}
+.summary-section {background:#f8f9fa;padding:25px;border-radius:8px;margin-bottom:30px;}
+.summary-section h2 {color:#2c3e50;font-size:22px;margin-bottom:15px;border-left:4px solid #ff6d5a;padding-left:10px;}
+.summary-section p {color:#555;line-height:1.8;font-size:15px;text-indent:2em;}
+.stats-container {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:30px;}
+.stat-card {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:25px;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.15);}
+.stat-card.high-severity {background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);}
+.stat-card h3 {font-size:16px;margin-bottom:15px;opacity:0.9;}
+.stat-number {font-size:48px;font-weight:bold;}
+.issues-section {margin-bottom:30px;overflow-x:auto;}
+.issues-section h2 {color:#2c3e50;font-size:22px;margin-bottom:20px;border-left:4px solid #ff6d5a;padding-left:10px;}
+.issues-table {width:100%;border-collapse:collapse;background:white;box-shadow:0 2px 4px rgba(0,0,0,0.05);}
+.issues-table thead {background:#34495e;color:white;}
+.issues-table th {padding:15px;text-align:left;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.5px;}
+.issues-table td {padding:15px;border-bottom:1px solid #ecf0f1;color:#555;font-size:14px;line-height:1.6;}
+.issues-table tbody tr:hover {background:#f8f9fa;}
+.severity-badge {display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:bold;text-transform:uppercase;}
+.severity-badge.high {background:#ff6b6b;color:white;}
+.severity-badge.medium {background:#ffa726;color:white;}
+.severity-badge.low {background:#66bb6a;color:white;}
+.footer {border-top:2px solid #ecf0f1;padding-top:20px;margin-top:30px;text-align:center;color:#95a5a6;font-size:13px;}
+.footer p {margin:5px 0;}
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>装修报价单分析报告</h1>
+      <div class="header-info">
+        <div class="info-item"><strong>工程信息:</strong> 业主：未填写；地址：未填写</div>
+        <div class="info-item"><strong>报价信息:</strong> 装修施工单位：未填写；日期：未填写</div>
+        <div class="info-item"><strong>分析时间:</strong> 2026-01-27T09:00:04Z</div>
+      </div>
+    </div>
+    <div class="score-card high">
+      <h2>整体评分</h2>
+      <div class="score">65</div>
+      <div class="risk-level">风险等级: HIGH</div>
+    </div>
+    <div class="summary-section">
+      <h2>总体评价</h2>
+      <p>该报价单存在多处价格虚高、计量错误及材料规格不明确问题，尤其厨房地砖和次卧室墙面项目风险较高。防水等关键项目未计价，且大量家具家电混入装修报价，整体透明度不足。建议逐项核实工程量与单价，并补充材料及工艺细节。</p>
+    </div>
+    <div class="stats-container">
+      <div class="stat-card">
+        <h3>发现问题总数</h3>
+        <div class="stat-number">7</div>
+      </div>
+      <div class="stat-card high-severity">
+        <h3>高风险问题</h3>
+        <div class="stat-number">2</div>
+      </div>
+    </div>
+    <div class="issues-section">
+      <h2>问题详情</h2>
+      <table class="issues-table">
+        <thead>
+          <tr>
+            <th>类别</th>
+            <th>严重程度</th>
+            <th>描述</th>
+            <th>位置</th>
+            <th>建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>价格合理性</td><td><span class="severity-badge high">HIGH</span></td><td>厨房地面铺砖材料费异常：150块地砖单价150元/块，总金额22500元，但按800*800规格计算，150块仅约96平方米，而实际厨房地面面积应远小于该值，存在明显虚高。</td><td>五、厨房 - 1. 地面铺砖</td><td>核实厨房实际面积，重新核算地砖数量与单价，确保符合市场行情（通常800*800地砖单价在50-100元/块）。</td></tr><tr><td>计量单位</td><td><span class="severity-badge high">HIGH</span></td><td>次卧室墙面刮涂材料费矛盾：材料数量为1平方米，单价0元，但备注显示使用立邦涂料，材料费应不为0；同时人工费计算面积41平方米，与房间实际墙面面积不符。</td><td>三、次卧室 - 3. 墙面刮涂</td><td>明确材料品牌、单价及用量，核实墙面实际面积，修正材料费和人工费计算。</td></tr><tr><td>项目完整性</td><td><span class="severity-badge medium">MEDIUM</span></td><td>卫生间防水项目未计价：虽列出了地面和墙面防水施工内容，但材料费和人工费均为0，实际防水工程应有明确费用。</td><td>七、卫生间 - 4. 地面防水、5. 墙面防水</td><td>补充防水材料品牌、单价及施工费用，确保防水工程成本透明。</td></tr><tr><td>材料规格</td><td><span class="severity-badge medium">MEDIUM</span></td><td>多项材料规格不明确：如'木工板'、'实木框'、'人造石'等未注明品牌、环保等级或具体型号，易引发后期纠纷。</td><td>一、客厅及餐厅 - 7. 包阀门；六、阳台（大） - 4. 包立管；五、厨房 - 7. 厨柜等</td><td>补充所有主材的品牌、型号、环保标准等详细信息，确保材料可追溯。</td></tr><tr><td>工艺说明</td><td><span class="severity-badge medium">MEDIUM</span></td><td>吊顶、刮涂等工艺描述过于简略：如'吊顶'未说明龙骨材质、石膏板厚度；'刮墙及涂料'未说明腻子层数、涂料遍数等关键工艺参数。</td><td>一、客厅及餐厅 - 9. 吊顶；多处刮涂项目</td><td>细化施工工艺说明，包括基层处理、材料层数、验收标准等，避免偷工减料。</td></tr><tr><td>隐藏费用</td><td><span class="severity-badge low">LOW</span></td><td>'其他'类目中包含大量家具家电（如红木沙发、床、衣柜等），这些通常不属于基础装修范畴，可能混淆装修报价与全屋定制/软装费用。</td><td>八、其他 - 7至11项</td><td>将基础装修与家具家电分开列项，明确区分硬装与软装费用，便于业主决策。</td></tr><tr><td>计量单位</td><td><span class="severity-badge low">LOW</span></td><td>部分项目单位混乱：如'防盗窗'人工费按80（无单位）计算，'包立管'无数量单位，易导致结算争议。</td><td>八、其他 - 4. 防盗窗；五、厨房 - 6. 包立管；七、卫生间 - 6. 包立管</td><td>统一计量单位（如平方米、米、个等），确保所有项目数量、单位清晰可查。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <p>报告生成时间: 2026-01-27 09:00:04</p>
+      <p>温馨提示：请结合本报告与装修公司核实细节，规避施工风险</p>
+    </div>
+  </div>
+</body>
+</html>
